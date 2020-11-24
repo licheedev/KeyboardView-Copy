@@ -19,7 +19,6 @@ public class NumPassKeyboardView extends KeyboardView {
     }
 
     private void init() {
-
         mKeyboard = new Keyboard(getContext(), R.xml.keyboard_password);
         setOnKeyboardActionListener(mOnKeyboardActionListener);
         setKeyboard(mKeyboard);

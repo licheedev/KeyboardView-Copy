@@ -9,5 +9,5 @@ allprojects {
   }
 }
 
-implementation 'com.licheedev:keyboardview-copy:1.0.0'
+implementation 'com.licheedev:keyboardview-copy:1.0.1'
 ```

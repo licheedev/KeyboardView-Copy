@@ -11,9 +11,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
+        app:keyBackground="@drawable/selector_keyboard_bg"
         app:keyTextColor="@color/white"
-        app:keyTextSize="@dimen/normal_60dp"
-        app:backgroundDimAmount="20"
-        app:keyBackground="@drawable/selector_keyboard_bg" />
+        app:keyTextSize="@dimen/normal_60dp" />
 
 </LinearLayout>

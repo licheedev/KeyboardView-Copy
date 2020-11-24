@@ -343,7 +343,7 @@ public class KeyboardView extends View implements View.OnClickListener {
         mMiniKeyboardCache = new HashMap<Key, View>();
 
         if (mKeyBackground == null) {
-            setKeyBackground(R.drawable.keyboard_key_background);
+            setKeyBackground(R.drawable.default_keyboard_key_background);
         }
 
         mKeyBackground.getPadding(mPadding);
