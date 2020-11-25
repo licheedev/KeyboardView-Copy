@@ -15,41 +15,41 @@
     <!--        <enum name="bold_italic" value="3" />-->
     <!--    </attr>-->
     <!--</declare-styleable>-->
-    
+
     <!--<color name="ime_background_letters">#999999</color>-->
     <!--<dimen name="keyboard_key_punctuation_height">32dp</dimen>-->
     <!--<color name="car_teal_700">#ff00796b</color>-->
-    
+
     <declare-styleable name="KeyboardView">
         <!-- Default KeyboardView style. -->
         <attr name="keyboardViewStyle" format="reference" />
-    
+
         <!-- Image for the key. This image needs to be a StateListDrawable, with the following
              possible states: normal, pressed, checkable, checkable+pressed, checkable+checked,
              checkable+checked+pressed. -->
         <attr name="keyBackground" format="reference" />
-    
+
         <!-- Size of the text for character keys. -->
         <attr name="keyTextSize" format="dimension" />
-    
+
         <!-- Size of the text for custom keys with some text and no icon. -->
         <attr name="labelTextSize" format="dimension" />
-    
+
         <!-- Color to use for the label in a key. -->
         <attr name="keyTextColor" format="color" />
-    
+
         <!-- Layout resource for key press feedback. -->
         <attr name="keyPreviewLayout" format="reference" />
-    
+
         <!-- Vertical offset of the key press feedback from the key. -->
         <attr name="keyPreviewOffset" format="dimension" />
-    
+
         <!-- Height of the key press feedback popup. -->
         <attr name="keyPreviewHeight" format="dimension" />
-    
+
         <!-- Amount to offset the touch Y coordinate by, for bias correction. -->
         <attr name="verticalCorrection" format="dimension" />
-    
+
         <!-- Layout resource for popup keyboards. -->
         <attr name="popupLayout" format="reference" />
         <!-- Place a blurred shadow of text underneath the text, drawn with the
@@ -62,14 +62,16 @@
         <attr name="shadowRadius" format="float" />
         <!-- Default background dim amount when a menu, dialog, or something similar pops up. -->
         <attr name="backgroundDimAmount" format="float" />
+        <!-- Default keyboard layout xml. -->
+        <attr name="defaultKeyboardXml" format="reference" />
     </declare-styleable>
-    
+
     <declare-styleable name="KeyboardViewPreviewState">
         <!-- State for {@link android.inputmethodservice.KeyboardView KeyboardView}
                 key preview background. -->
         <attr name="state_long_pressable" format="boolean" />
     </declare-styleable>
-    
+
     <declare-styleable name="Keyboard">
         <!-- Default width of a key, in pixels or percentage of display width. -->
         <attr name="keyWidth" format="dimension|fraction" />
@@ -80,7 +82,7 @@
         <!-- Default vertical gap between rows of keys. -->
         <attr name="verticalGap" format="dimension|fraction" />
     </declare-styleable>
-    
+
     <declare-styleable name="Keyboard_Row">
         <!-- Row edge flags. -->
         <attr name="rowEdgeFlags">
@@ -93,7 +95,7 @@
              requested keyboard mode, the row will be skipped. -->
         <attr name="keyboardMode" format="reference" />
     </declare-styleable>
-    
+
     <declare-styleable name="Keyboard_Key">
         <!-- The unicode value or comma-separated values that this key outputs. -->
         <attr name="codes" format="integer|string" />
@@ -143,11 +145,11 @@
     <!-- Description of the Enter button in a KeyboardView. [CHAR LIMIT=NONE] -->
     <string name="keyboardview_keycode_enter">Enter</string>
 
-    <item type="id" name="keyboardView" />
-    <item type="id" name="closeButton" />
-    
+    <item name="keyboardView" type="id" />
+    <item name="closeButton" type="id" />
+
 
     <color name="default_color_key_normal">#EEEEEE</color>
     <color name="default_color_key_pressed">#DDDDDD</color>
-    
+
 </resources>

@@ -49,6 +49,8 @@ import androidx.annotation.ColorRes;
 import androidx.annotation.DimenRes;
 import androidx.annotation.Dimension;
 import androidx.annotation.DrawableRes;
+import androidx.annotation.Nullable;
+import androidx.annotation.XmlRes;
 import androidx.core.content.ContextCompat;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -200,6 +202,9 @@ public class KeyboardView extends View implements View.OnClickListener {
 
     Handler mHandler;
 
+    @Nullable
+    protected Keyboard mDefaultKeyboard;
+
     public KeyboardView(Context context, AttributeSet attrs) {
         this(context, attrs, R.attr.keyboardViewStyle);
     }
@@ -247,6 +252,11 @@ public class KeyboardView extends View implements View.OnClickListener {
                 mShadowRadius = a.getFloat(attr, 0f);
             } else if (attr == R.styleable.KeyboardView_backgroundDimAmount) {
                 mBackgroundDimAmount = a.getFloat(attr, 0.5f);
+            } else if (attr == R.styleable.KeyboardView_defaultKeyboardXml) {
+                int keyboardXml = a.getResourceId(attr, 0);
+                if (keyboardXml != 0) {
+                    setDefaultKeyboard(keyboardXml);
+                }
             }
         }
         a.recycle();
@@ -284,7 +294,7 @@ public class KeyboardView extends View implements View.OnClickListener {
         }
 
         mKeyBackground.getPadding(mPadding);
-        
+
         mSwipeThreshold = (int) (500 * getResources().getDisplayMetrics().density);
         mDisambiguateSwipe = true;
 
@@ -296,6 +306,11 @@ public class KeyboardView extends View implements View.OnClickListener {
         resetMultiTap();
     }
 
+    public void setDefaultKeyboard(@XmlRes int keyboardXml) {
+        mDefaultKeyboard = new Keyboard(getContext(), keyboardXml);
+        setKeyboard(mDefaultKeyboard);
+    }
+
     public void setKeyBackground(@DrawableRes int drawableId) {
         Drawable drawable = ContextCompat.getDrawable(getContext(), drawableId);
         mKeyBackground = drawable;
@@ -305,21 +320,20 @@ public class KeyboardView extends View implements View.OnClickListener {
         mLabelTextSize = pixel;
     }
 
-    public void setKeyTextSize(@Dimension int pixel) {
-        mKeyTextSize = pixel;
-    }
-
-    public void setKeyTextColor(@ColorInt int color) {
-        mKeyTextColor = color;
-    }
-
     public void setLabelTextSizeRes(@DimenRes int dimenRes) {
         mLabelTextSize = getResources().getDimensionPixelSize(dimenRes);
     }
 
+    public void setKeyTextSize(@Dimension int pixel) {
+        mKeyTextSize = pixel;
+    }
+
     public void setKeyTextSizeRes(@DimenRes int dimenRes) {
         mKeyTextSize = getResources().getDimensionPixelSize(dimenRes);
-        ;
+    }
+
+    public void setKeyTextColor(@ColorInt int color) {
+        mKeyTextColor = color;
     }
 
     public void setKeyTextColorRes(@ColorRes int colorRes) {
