@@ -1,20 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
-    <dimen name="key_height">@dimen/normal_120dp</dimen>
-    <dimen name="key_password_height">@dimen/normal_120dp</dimen>
-    <dimen name="key_width">@dimen/normal_240dp</dimen>
-    <dimen name="key_width_x2">@dimen/normal_480dp</dimen>
-    <dimen name="keyboard_width">@dimen/normal_712dp</dimen>
-
-
-    <dimen name="horizontalGap">0dp</dimen>
-    <dimen name="verticalGap">0dp</dimen>
-    <dimen name="key_border">@dimen/normal_8dp</dimen>
-    <dimen name="half_key_border">@dimen/normal_4dp</dimen>
-    <color name="color_key_normal">#609BEB</color>
-    <color name="color_edit_bg">#dce9fb</color>
-    <color name="color_edit_pw_bg">#c6c6c6</color>
-    <color name="color_key_pressed">#3B4DD7</color>
+    
+    <dimen name="key_border">@dimen/normal_30dp</dimen>
+    <color name="color_key_normal">#F2F2F2</color>
+    <color name="color_key_pressed">#E4E4E4</color>
 
 </resources>

@@ -7,12 +7,33 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <com.licheedev.keyboardview_copy.NumPassKeyboardView
+    <EditText
+        android:id="@+id/editText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        app:keyBackground="@drawable/selector_keyboard_bg"
-        app:keyTextColor="@color/white"
-        app:keyTextSize="@dimen/normal_60dp" />
+        android:singleLine="true" />
 
+    <EditText
+        android:id="@+id/editText2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:singleLine="true" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/black">
+
+        <com.licheedev.keyboardview_copy.NumPassKeyboardView
+            android:id="@+id/keyboardView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/key_border"
+            android:layout_marginBottom="@dimen/key_border"
+            app:keyBackground="@drawable/selector_keyboard_key"
+            app:keyTextColor="@color/black"
+            app:keyTextSize="@dimen/normal_60dp"
+            app:labelTextSize="@dimen/normal_50dp" />
+    </FrameLayout>
 </LinearLayout>
